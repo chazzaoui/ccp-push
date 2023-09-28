@@ -20,9 +20,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-const firebaseApp = initializeApp(firebaseConfig);
 export const messaging = getMessaging(app);
 
 export const getUserToken = setTokenFound => {
