@@ -1,4 +1,3 @@
-'use client';
 import { initializeApp } from 'firebase/app';
 import { getMessaging, getToken } from 'firebase/messaging';
 import { getUserToken, messaging } from './firebase';
@@ -32,10 +31,8 @@ export const askForPermissionToReceiveNotifications = async () => {
 
     if (permission === 'granted') {
       console.log('Notification permission granted.');
-      if (window) {
-        const token = getUserToken();
-        console.log('token:', token);
-      }
+      const token = getUserToken();
+      console.log('token:', token);
       // You can now use messaging to handle notifications
     } else {
       console.log('Notification permission not granted.');
