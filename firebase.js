@@ -21,8 +21,6 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
-export const messaging = getMessaging(app);
-
 export const getUserToken = setTokenFound => {
   return getToken(messaging)
     .then(currentToken => {
