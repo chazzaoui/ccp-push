@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+'use client';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getMessaging, getToken, onMessage } from 'firebase/messaging';
