@@ -33,7 +33,7 @@ export const askForPermissionToReceiveNotifications = async () => {
       if (permission === 'granted') {
         console.log('Notification permission granted.');
         const messaging = getMessaging(app);
-        const token = await messaging.getToken();
+        const token = await getToken(messaging);
         window.alert(token);
         console.log('token:', token);
         // You can now use messaging to handle notifications
