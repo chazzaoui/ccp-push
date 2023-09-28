@@ -1,9 +1,11 @@
-importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js');
-import { initializeApp } from 'firebase/app';
-import { getMessaging } from 'firebase/messaging';
+importScripts(
+  'https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js'
+);
+importScripts(
+  'https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compat.js'
+);
 
-const app = initializeApp({
+initializeApp({
   apiKey: 'AIzaSyDXNQBE9GilhysQ2fPgotfbvh4YjN8nxDI',
   authDomain: 'ccp-push.firebaseapp.com',
   projectId: 'ccp-push',
@@ -13,7 +15,8 @@ const app = initializeApp({
   measurementId: 'G-80BXFCQ0EN'
 });
 
-const messaging = getMessaging(app);
+firebase.initializeApp(firebaseConfig);
+const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage(payload => {
   console.log(
