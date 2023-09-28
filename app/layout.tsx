@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   title: 'Troop',
   description: 'Troop app'
 };
-
 initializeFirebase();
+
 export default function RootLayout({
   children
 }: {
