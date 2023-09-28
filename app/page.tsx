@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import styles from './page.module.css';
-import { NotificationButton } from '../pushnotification.tsx';
+import { askForPermissionToReceiveNotifications } from '../pushnotification.js';
 
 export default function Home() {
   return (
@@ -30,7 +30,9 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <NotificationButton />
+      <button onClick={askForPermissionToReceiveNotifications}>
+        Click to receive notifications
+      </button>
       <div className={styles.center}>
         <Image
           className={styles.logo}

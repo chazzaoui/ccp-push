@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "firebase.js"
+    "firebase.js",
+    "pushnotification.js"
   ],
   "exclude": ["node_modules"]
 }

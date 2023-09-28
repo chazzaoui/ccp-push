@@ -23,28 +23,20 @@ export const initializeFirebase = () => {
   });
 };
 
-export function NotificationButton() {
-  const askForPermissionToReceiveNotifications = async () => {
-    try {
-      const messaging = getMessaging(app);
+export const askForPermissionToReceiveNotifications = async () => {
+  try {
+    const messaging = getMessaging(app);
 
-      console.log('Requesting permission...');
-      const permission = await Notification.requestPermission();
+    console.log('Requesting permission...');
+    const permission = await Notification.requestPermission();
 
-      if (permission === 'granted') {
-        console.log('Notification permission granted.');
-        // You can now use messaging to handle notifications
-      } else {
-        console.log('Notification permission not granted.');
-      }
-    } catch (error) {
-      console.error(error);
+    if (permission === 'granted') {
+      console.log('Notification permission granted.');
+      // You can now use messaging to handle notifications
+    } else {
+      console.log('Notification permission not granted.');
     }
-  };
-
-  return (
-    <button onClick={askForPermissionToReceiveNotifications}>
-      Click to receive notifications
-    </button>
-  );
-}
+  } catch (error) {
+    console.error(error);
+  }
+};

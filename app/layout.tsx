@@ -2,7 +2,7 @@ import { app } from '@/firebase';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { initializeFirebase } from '../pushnotification.tsx';
+import { initializeFirebase } from '../pushnotification.js';
 
 const inter = Inter({ subsets: ['latin'] });
 
