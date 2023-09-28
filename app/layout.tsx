@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description: 'Troop app'
 };
 
+initializeFirebase();
 export default function RootLayout({
   children
 }: {
   children: React.ReactNode;
 }) {
-  initializeFirebase();
   return (
     <html lang='en'>
       <head>
