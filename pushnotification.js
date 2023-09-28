@@ -26,14 +26,20 @@ export const initializeFirebase = () => {
 
 export const askForPermissionToReceiveNotifications = async () => {
   try {
-    console.log('Requesting permission...');
-    const permission = await Notification.requestPermission();
+    if (typeof window !== 'undefined') {
+      console.log('Requesting permission...');
+      const permission = await Notification.requestPermission();
 
-    if (permission === 'granted') {
-      console.log('Notification permission granted.');
-      // You can now use messaging to handle notifications
-    } else {
-      console.log('Notification permission not granted.');
+      if (permission === 'granted') {
+        console.log('Notification permission granted.');
+        const messaging = getMessaging(app);
+        const token = await messaging.getToken();
+        window.alert(token);
+        console.log('token:', token);
+        // You can now use messaging to handle notifications
+      } else {
+        console.log('Notification permission not granted.');
+      }
     }
   } catch (error) {
     console.error(error);
